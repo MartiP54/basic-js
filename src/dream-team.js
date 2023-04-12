@@ -16,24 +16,29 @@ const { NotImplementedError } = require('../extensions/index.js');
 function createDreamTeam(name) {
   console.log(name);
   let team = [];
+  if (name === null || name === undefined) {
+    console.log('null');
+    return false;
+  }
+  console.log(team.length == 0);
   for (let i = 0; i < name.length; i++) {
     if (typeof name[i] == "string") {
-      team[i] = name[i].slice(0,1).toUpperCase();
+      team[i] = name[i].trimStart().slice(0,1).toUpperCase();
     }
   }
   if (team.length == 0) {
-    return false
+    return false;
   } else {
     team = team.filter(Boolean);
     team = team.sort();
     team = team.join('');
+    console.log(team);
     return team;
   }
   
 
 }
-
-
+createDreamTeam(undefined);
 
 module.exports = {
   createDreamTeam
