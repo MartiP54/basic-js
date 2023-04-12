@@ -14,10 +14,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(name) {
-  console.log(name);
   let team = [];
   if (name === null || name === undefined) {
-    console.log('null');
     return false;
   }
   console.log(team.length == 0);
@@ -32,13 +30,12 @@ function createDreamTeam(name) {
     team = team.filter(Boolean);
     team = team.sort();
     team = team.join('');
-    console.log(team);
     return team;
   }
   
 
 }
-createDreamTeam(undefined);
+createDreamTeam();
 
 module.exports = {
   createDreamTeam
