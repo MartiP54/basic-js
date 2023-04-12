@@ -57,15 +57,12 @@ function transform(arr) {
   return rez;
 }
 }
-
 rez = rez.concat(arr);
 console.log(rez);
 return rez;
 
 }
-
-transform([1, 2, 3, '--discard-next', 1337, '--double-prev', 4, 5]);
-
+transform([ 1, 2, 3, '--double-prev', 4, 5 ] );
 module.exports = {
   transform
 };
