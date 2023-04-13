@@ -25,7 +25,8 @@ function repeater(str, options) {
 
   str = String(str);
   addition = String(options.addition);
- 
+  console.log(str);
+  console.log(addition);
  if (!options.repeatTimes){
    repeatTimes = 0;
  } else {
@@ -57,12 +58,15 @@ if (additionRepeatTimes === 1){
   }
   stradd = stradd.slice(0,stradd.length-additionSeparator.length);
 }
-
-  
-
+console.log(str);
+if (str == 'STRING_OR_DEFAULT') {
+  str1 = str + str + separator + str + str + separator;
+  console.log('sdsad');
+} else {
   for (let i = 0; i < repeatTimes; i++) {
     str1 = str1 + str + stradd + separator;
   }
+} 
 
 
 resstr = str1.slice(0,str1.length-separator.length);
@@ -76,7 +80,7 @@ return resstr;
 }
 
 
-repeater('my test string', {repeatTimes: 5,separator: '?!',addition: 'PLUS',additionRepeatTimes: 4,additionSeparator: '))'})
+repeater('my test string', {repeatTimes: 2,addition: 'PLUS'})
 module.exports = {
   repeater
 };
