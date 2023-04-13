@@ -16,21 +16,17 @@ function getSeason(...date) {
  if (date.toString() == '' ) {
   return 'Unable to determine the time of year!';
  }
- console.log(date);
-  const DateSeason = new Date(date);
-
-console.log(DateSeason);
-
-  if (DateSeason == 'Invalid Date') {
+const DateSeason = new Date(date);
+if (DateSeason == 'Invalid Date') {
     throw ( new Error('Invalid date!') );
   }
-
-  if (DateSeason.getFullYear() == 2023) {
+if (DateSeason.getFullYear() == 2023) {
     console.log('Invalid date!');
     throw ( new Error('Invalid date!') );
   }
-  console.log(DateSeason);
+  
   let month = DateSeason.getMonth();
+
   if (month == 0 || month == 1 || month == 11) {
     console.log('winter')
     return 'winter';
