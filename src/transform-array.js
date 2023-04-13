@@ -16,7 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 function transform(arr) {
   let rez = [];
  if  ( !Array.isArray(arr) || arr == null ) {
-  console.log('no array');
+
   throw ( new Error("'arr' parameter must be an instance of the Array!") );
  }
 
@@ -36,7 +36,6 @@ function transform(arr) {
     } else {
     rez = rez.concat(arr.slice(0,i),arr.slice(i-1,i),arr.slice(i+1,arr.length));
   }
-  console.log(rez);
   return rez;
 }
   if (arr[i] == '--double-next') {
@@ -47,7 +46,6 @@ function transform(arr) {
   }
   return rez;
 }
-
   if (arr[i] === '--discard-next') {
     if (i === (arr.length-1)) {
       rez = rez.concat(arr.slice(0,arr.length-1));
@@ -57,12 +55,28 @@ function transform(arr) {
   return rez;
 }
 }
+
+// for (let j = 0; j < rez.length; j++) {
+//   if (rez[j] === '--double-prev') {
+//     console.log('111');
+//     rez1 = rez1.concat(rez.slice(0,j),rez.slice(j+1,rez.length));
+//     console.log(rez1);
+//     return rez1;
+//   } else {
+//     console.log(rez);
+//     return rez;
+//   }
+//   }
+
+
 rez = rez.concat(arr);
-console.log(rez);
 return rez;
+
+
 
 }
 
+transform([1, 2, 3, '--discard-next', 1337, '--double-prev', 4, 5]);
 module.exports = {
   transform
 };
