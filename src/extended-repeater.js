@@ -61,7 +61,6 @@ if (additionRepeatTimes === 1){
 console.log(str);
 if (str == 'STRING_OR_DEFAULT') {
   str1 = str + str + separator + str + str + separator;
-  console.log('sdsad');
 } else {
   for (let i = 0; i < repeatTimes; i++) {
     str1 = str1 + str + stradd + separator;
