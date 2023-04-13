@@ -18,11 +18,22 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(sample) {
-  if (typeof (sample) != Number) {
-    return false
+  let x,y,age;
+  console.log(sample)
+  if (Number.isFinite(sample) || Array.isArray(sample)) {
+    return false;
   }
+  sample = Number(sample);
+  if (sample > 15 || sample <=0 || isNaN(sample)) {
+    return false;
+  }
+  x = Math.log(MODERN_ACTIVITY/sample);
+  y = 0.693/HALF_LIFE_PERIOD;
+  age = Math.ceil(x/y);
+  return age;
 }
 
+dateSample(3);
 module.exports = {
   dateSample
 };
