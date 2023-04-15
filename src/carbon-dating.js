@@ -24,7 +24,7 @@ function dateSample(sample) {
     return false;
   }
   sample = Number(sample);
-  if (sample > 15 || sample <=0 || isNaN(sample)) {
+  if (sample > MODERN_ACTIVITY || sample <=0 || isNaN(sample)) {
     return false;
   }
   x = Math.log(MODERN_ACTIVITY/sample);
