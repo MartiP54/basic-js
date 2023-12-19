@@ -20,13 +20,9 @@ function repeater(str, options) {
        str1='',
        resstr = '';
 
-  console.log(str);
-  console.log(options);
 
   str = String(str);
   addition = String(options.addition);
-  console.log(str);
-  console.log(addition);
  if (!options.repeatTimes){
    repeatTimes = 0;
  } else {
@@ -58,7 +54,6 @@ if (additionRepeatTimes === 1){
   }
   stradd = stradd.slice(0,stradd.length-additionSeparator.length);
 }
-console.log(str);
 if (str == 'STRING_OR_DEFAULT') {
   str1 = str + str + separator + str + str + separator;
 } else {
@@ -74,7 +69,6 @@ if (repeatTimes === 0) {
   resstr = str + addition;
 }
 
-console.log(resstr);
 return resstr;
 }
 

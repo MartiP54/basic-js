@@ -24,7 +24,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]
  */
 function minesweeper(matrix) {
-  console.table(matrix);
   k =0;
 
   // проход по горизонтали 

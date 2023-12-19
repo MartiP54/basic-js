@@ -15,13 +15,11 @@ function getEmailDomain(email) {
   for (let i = 0; i < email.length; i++) {
     if (email[i] === '@') {
       email = email.slice(i+1, email.length);
-       console.log(email);
     }
   }
   for (let i = 0; i < email.length; i++) {
     if (email[i] === '@') {
       email = email.slice(i+1, email.length);
-       console.log(email);
     }
   }
   return email;

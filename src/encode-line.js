@@ -25,7 +25,6 @@ function encodeLine(str) {
       if (count > 1) {
       rezArr[k] = count;
       rezArr[k+1] = strArr[i];
-      console.log(strArr[i]);
       k = k + 2;
       count = 1;
       } else  {

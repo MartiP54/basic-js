@@ -18,7 +18,6 @@ function createDreamTeam(name) {
   if (name === null || name === undefined) {
     return false;
   }
-  console.log(team.length == 0);
   for (let i = 0; i < name.length; i++) {
     if (typeof name[i] == "string") {
       team[i] = name[i].trimStart().slice(0,1).toUpperCase();

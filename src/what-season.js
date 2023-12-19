@@ -21,26 +21,21 @@ if (DateSeason == 'Invalid Date') {
     throw ( new Error('Invalid date!') );
   }
 if (DateSeason.getFullYear() == 2023) {
-    console.log('Invalid date!');
     throw ( new Error('Invalid date!') );
   }
   
   let month = DateSeason.getMonth();
 
   if (month == 0 || month == 1 || month == 11) {
-    console.log('winter')
     return 'winter';
   }
   if (month == 2 || month == 3 || month == 4 )  {
-    console.log('spring')
     return 'spring';
   }
   if (month == 5 || month == 6 || month == 7) {
-    console.log('summer')
     return 'summer';
   }
   if (month == 8 || month == 9 || month == 10) {
-    console.log('autumn')
     return 'autumn';
   } 
 };
