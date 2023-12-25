@@ -7,15 +7,17 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 const chainMaker = {
   chain : [],
-
+  
   getLength() {
    return (this.chain.length);
   },
   addLink(value) {
+    console.log(this.chain.join(''));
     this.chain.push(`~~( ${value} )`);
     return this;
   },
   removeLink(position) {
+    console.log(this.chain.join(''));
     if (typeof this.chain[position - 1] === "undefined") { 
       this.chain = [];
       throw new Error("You can't remove incorrect link!");
@@ -26,15 +28,20 @@ const chainMaker = {
       }
   },
   reverseChain() {
+    console.log(this.chain.join(''));
     this.chain.reverse();
     return this;
   },
   finishChain() {
+    let resultchain ='';
+    console.log(this.chain.join(''));
     if (this.chain.join('')[1] === '~') {
-      return (this.chain.join('').slice(2))
+      resultchain = this.chain.join('').slice(2);
     } else {
-      return (this.chain.join(''));
+      resultchain = this.chain.join('');
     }
+    this.chain = [];
+    return resultchain;
   }
 };
 
