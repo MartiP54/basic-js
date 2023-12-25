@@ -12,7 +12,7 @@ const chainMaker = {
    return (this.chain.length);
   },
   addLink(value) {
-    this.chain.length === 0 ? this.chain.push(`( ${value} )`) : this.chain.push(`~~( ${value} )`);
+    this.chain.push(`~~( ${value} )`);
     return this;
   },
   removeLink(position) {
@@ -26,11 +26,15 @@ const chainMaker = {
       }
   },
   reverseChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    this.chain.reverse();
+    return this;
   },
   finishChain() {
-    this.chain.join('')[1] === '~' ? console.log (this.chain.join('').slice(2)) : console.log (this.chain.join(''));
+    if (this.chain.join('')[1] === '~') {
+      return (this.chain.join('').slice(2))
+    } else {
+      return (this.chain.join(''));
+    }
   }
 };
 
